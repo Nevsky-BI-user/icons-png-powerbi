@@ -233,11 +233,16 @@ const DATA = [
 ];
 
 const CDN_BASE = "https://cdn.jsdelivr.net/gh/Nevsky-BI-user/icons-png-powerbi@main/icons";
+// Cache-bust for <img> elements: appended to img src so browser image cache and CDN edge
+// both treat it as a new URL. Updated each rebuild via BUILT_AT timestamp. The copy-buttons
+// always copy the clean URL (without ?v=) so DAX stays simple.
+const IMG_BUST = "?v=" + encodeURIComponent("2026-05-11 18:09:18".replace(/\D/g, ""));
 const grid = document.getElementById("grid");
 const search = document.getElementById("search");
 const stats = document.getElementById("stats");
 
 function urlOf(d){ return `${CDN_BASE}/${d.cat}/${d.file}`; }
+function imgUrlOf(d){ return urlOf(d) + IMG_BUST; }
 
 function render(){
   grid.innerHTML = "";
@@ -264,7 +269,7 @@ function render(){
     card.dataset.search = `${d.cat} ${d.name} ${d.file} ${d.desc} ${d.use} ${d.source}`.toLowerCase();
     const url = urlOf(d);
     card.innerHTML = `
-      <div class="preview"><img src="${url}" alt="${d.name}" loading="lazy"></div>
+      <div class="preview"><img src="${imgUrlOf(d)}" alt="${d.name}" loading="lazy"></div>
       <div class="meta">
         <p class="name"><span class="cat-tag">${d.cat}</span>${d.name}</p>
         <p class="desc${d.note?' note':''}">
