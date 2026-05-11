@@ -15,7 +15,8 @@
       "color": "string - hex without leading hash",
       "license": "string - SPDX identifier",
       "attribution": "string or null",
-      "added": "string - YYYY-MM-DD"
+      "added": "string - YYYY-MM-DD",
+      "description": "string - human-readable Ukrainian description (5-15 words) + optional use-site after ·"
     }
   },
   "categories": [
@@ -77,6 +78,7 @@
         "сельское хозяйство",
         "tractor field"
       ],
+      "description": "Сільгосптехніка — агро, рослинництво · smoke-test, не у візуалі",
       "source": "iconify:material-symbols",
       "source_icon_id": "material-symbols:agriculture",
       "style": "filled",
@@ -101,6 +103,7 @@
         "организация",
         "company"
       ],
+      "description": "Дипломат / валіза — робота, посада, організація · у візуалі: Profile meta (org), Detail header «Організація»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:briefcase",
       "style": "outlined",
@@ -125,6 +128,7 @@
         "подразделение",
         "department"
       ],
+      "description": "Папка — підрозділ, напрям, ієрархія · у візуалі: Profile meta (напрям / піднапрям)",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:folder",
       "style": "outlined",
@@ -149,6 +153,7 @@
         "hire_date",
         "schedule"
       ],
+      "description": "Календар — дата події, місяць, schedule · у візуалі: Header кнопка, Profile meta («у холдингу з …»)",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:calendar",
       "style": "outlined",
@@ -174,6 +179,7 @@
         "wage",
         "compensation"
       ],
+      "description": "Монети — гроші, винагорода, оклад, РЦД · у візуалі: KPI #1 «Поточний РЦД», Tooltip «РЦД», Detail «Винагорода»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:coins",
       "style": "outlined",
@@ -198,6 +204,7 @@
         "increase",
         "arrow_up"
       ],
+      "description": "Стрілка вгору — зростання, тренд, кар'єра · у візуалі: KPI #2 «Кар'єрний шлях», заголовок графіка «Динаміка РЦД»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:trending-up",
       "style": "outlined",
@@ -222,6 +229,7 @@
         "star_employee",
         "зірковий"
       ],
+      "description": "Зірка — рейтинг, обране, star employee · у візуалі: KPI #3 «Performance», Tooltip star marker, Detail «Performance»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:star",
       "style": "outlined",
@@ -247,6 +255,7 @@
         "okr",
         "bullseye"
       ],
+      "description": "Мішень — ціль, OKR, bullseye, objective · у візуалі: KPI #4 «OKR · інд. бонус», Detail «OKR · інд. бонус»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:target",
       "style": "outlined",
@@ -272,6 +281,7 @@
         "стаж",
         "duration"
       ],
+      "description": "Годинник — час, стаж, тривалість · у візуалі: Profile meta («стаж»), Tooltip «стаж на посаді» + години",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:clock",
       "style": "outlined",
@@ -296,6 +306,7 @@
         "people",
         "profile"
       ],
+      "description": "Силует людини — співробітник, користувач, profile · у візуалі: Profile picker «Вибір співробітника», Detail «Посада і стаж»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:user",
       "style": "outlined",
@@ -321,6 +332,7 @@
         "zap",
         "quick"
       ],
+      "description": "Блискавка — швидкість, енергія, zap · у візуалі: Tooltip mini-tile «Оклад»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:zap",
       "style": "outlined",
@@ -346,6 +358,7 @@
         "trend_line",
         "dashboard"
       ],
+      "description": "Графік-лінія — динаміка, аналітика, дашборд · у візуалі: Header кнопка, Tooltip footer, Detail header «Повна деталізація»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:line-chart",
       "style": "outlined",
@@ -371,6 +384,7 @@
         "recognition",
         "performance"
       ],
+      "description": "Медаль — нагорода, premium, perf · визначено в ICN dictionary, НЕ рендериться у візуалі",
       "source": "iconify:material-symbols",
       "source_icon_id": "material-symbols:workspace-premium-outline",
       "style": "outlined",
@@ -395,6 +409,7 @@
         "net",
         "department_links"
       ],
+      "description": "Вузли з лініями — мережа, контакти, взаємодії · у візуалі: Tooltip «X контактів», Detail «Метрики взаємодії»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:network",
       "style": "outlined",
@@ -418,6 +433,7 @@
         "sort",
         "refine"
       ],
+      "description": "Воронка — фільтр, виборка, sort · у візуалі: Filter chip row «Фільтри:»",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:filter",
       "style": "outlined",
@@ -441,6 +457,7 @@
         "поиск",
         "lookup"
       ],
+      "description": "Лупа — пошук, find, lookup · у візуалі: Header кнопка (top-right)",
       "source": "iconify:lucide",
       "source_icon_id": "lucide:search",
       "style": "outlined",
