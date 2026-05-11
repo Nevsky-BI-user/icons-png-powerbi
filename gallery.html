@@ -40,7 +40,19 @@
     background: #fff;
   }
   #search:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  #refresh {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  #refresh:hover { background: var(--hover); border-color: var(--accent); }
   .stats { color: var(--muted); font-size: 12px; }
+  .built { color: var(--muted); font-size: 11px; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
   main { max-width: 1400px; margin: 0 auto; }
   .cat-title {
     grid-column: 1 / -1;
@@ -144,7 +156,9 @@
   </div>
   <div class="toolbar">
     <input id="search" type="text" placeholder="Пошук по назві, категорії, опису, тегам…" autofocus>
+    <button id="refresh" title="Hard reload (Ctrl+F5 еквівалент)">↻ Refresh</button>
     <span class="stats" id="stats"></span>
+    <span class="built" id="built"></span>
   </div>
 </header>
 
@@ -301,26 +315,44 @@ grid.addEventListener("click", (e) => {
 
 render();
 
-// ── Auto-refresh: poll own file every 3s, reload if DATA changed ──────────
-let __initialFingerprint = null;
-function __fingerprint(text){
-  const m = text.match(/const DATA = (\[[\s\S]*?\]);/);
-  return m ? m[1].length + ":" + m[1].slice(-200) : null;
-}
-async function __selfHash(){
-  const r = await fetch(location.pathname, {cache: "no-store"});
-  return __fingerprint(await r.text());
+// ── Refresh handling (file:// safe — no fetch, no CORS issues) ───────────
+const BUILT_AT = "2026-05-11 18:04:01";
+document.getElementById("built").textContent = "built " + BUILT_AT;
+
+function hardReload(){ location.reload(); }
+document.getElementById("refresh").addEventListener("click", hardReload);
+
+// Reload when user returns to the tab (most reliable for file:// — no fetch).
+// If you switched away and made changes via Claude, coming back triggers reload.
+let __wasHidden = false;
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) { __wasHidden = true; }
+  else if (__wasHidden) { __wasHidden = false; hardReload(); }
+});
+window.addEventListener("focus", () => {
+  // Window-focus also triggers (some browsers don't fire visibilitychange for window switches)
+  if (__wasHidden) { __wasHidden = false; hardReload(); }
+});
+
+// Best-effort polling for users on http(s) or browsers that allow file:// fetch.
+// Silently no-op if blocked.
+let __fp0 = null;
+async function __selfFp(){
+  try {
+    const r = await fetch(location.pathname, {cache: "no-store"});
+    const t = await r.text();
+    const m = t.match(/const DATA = (\[[\s\S]*?\]);/);
+    return m ? m[1].length + ":" + m[1].slice(-200) : null;
+  } catch(e) { return null; }
 }
 (async () => {
-  try { __initialFingerprint = await __selfHash(); } catch(e){}
-  setInterval(async () => {
-    try {
-      const h = await __selfHash();
-      if (h && __initialFingerprint && h !== __initialFingerprint){
-        location.reload();
-      }
-    } catch(e){}
-  }, 3000);
+  __fp0 = await __selfFp();
+  if (__fp0) {
+    setInterval(async () => {
+      const h = await __selfFp();
+      if (h && h !== __fp0) hardReload();
+    }, 3000);
+  }
 })();
 </script>
 </body>
