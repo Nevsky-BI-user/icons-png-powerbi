@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "schema": {
+    "icon_entry": {
+      "path": "string - relative path from repo root",
+      "url_raw": "string - raw.githubusercontent.com URL",
+      "url_cdn": "string - jsDelivr CDN URL for Power BI",
+      "category": "string - one of 20 categories",
+      "name": "string - icon name snake_case ASCII",
+      "tags": "array - semantic tags multilingual",
+      "source": "string - iconify:{set} or svgrepo",
+      "source_icon_id": "string - original ID for deduplication",
+      "style": "string - outlined/filled/regular",
+      "size_px": "integer - 64 or 128",
+      "color": "string - hex without leading hash",
+      "license": "string - SPDX identifier",
+      "attribution": "string or null",
+      "added": "string - YYYY-MM-DD"
+    }
+  },
+  "categories": [
+    "navigation", "actions", "kpi", "status", "time", "data", "users",
+    "communication", "security", "documents", "geography", "analytics",
+    "finance", "ecommerce", "hr", "agro", "logistics", "production",
+    "marketing", "sales"
+  ],
+  "defaults": {
+    "color": "063e61",
+    "size_px": 64,
+    "background": "transparent",
+    "style_family": "material-symbols-outlined",
+    "license_preference": ["MIT", "Apache-2.0", "CC0-1.0", "ISC", "CC-BY-4.0"]
+  },
+  "sources_enabled": {
+    "iconify": true,
+    "svgrepo": true,
+    "flaticon": false,
+    "icons8": false,
+    "noun_project": false
+  },
+  "updated": "2026-05-11",
+  "count": 0,
+  "icons": []
+}

@@ -1,0 +1,12 @@
+# Temporary files from SVG conversion
+*.svg.bak
+/tmp/
+*.tmp
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
