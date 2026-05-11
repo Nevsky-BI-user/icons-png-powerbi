@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Icon Gallery — Nevsky-BI-user/icons-png-powerbi</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --border: #d6dee8;
+    --text: #1f3556;
+    --muted: #6b7b8e;
+    --accent: #2c4f7c;
+    --hover: #eaf1f8;
+    --ok: #1f7a47;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  header { max-width: 1400px; margin: 0 auto 24px; }
+  h1 { margin: 0 0 4px; font-size: 22px; font-weight: 600; color: var(--accent); }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .toolbar {
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  #search {
+    flex: 1; min-width: 280px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+  }
+  #search:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .stats { color: var(--muted); font-size: 12px; }
+  main { max-width: 1400px; margin: 0 auto; }
+  .cat-title {
+    grid-column: 1 / -1;
+    margin: 24px 0 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 14px;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(44,79,124,0.08);
+  }
+  .card.hidden { display: none; }
+  .preview {
+    width: 80px; height: 80px;
+    background: var(--hover);
+    border-radius: 8px;
+    display: grid; place-items: center;
+  }
+  .preview img { width: 64px; height: 64px; object-fit: contain; }
+  .meta { min-width: 0; }
+  .name {
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0 0 2px;
+    color: var(--text);
+    word-break: break-word;
+  }
+  .cat-tag {
+    display: inline-block;
+    background: var(--hover);
+    color: var(--accent);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+  .desc {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 4px 0 8px;
+    line-height: 1.4;
+  }
+  .desc b { color: var(--text); font-weight: 600; }
+  .desc.note { color: #c28814; }
+  .copy-row { display: flex; gap: 6px; }
+  button.copy {
+    flex: 1;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10.5px;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+  }
+  button.copy:hover { background: var(--hover); color: var(--accent); border-color: var(--accent); }
+  button.copy.ok { background: #e8f4ed; color: var(--ok); border-color: var(--ok); }
+  .color-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: -1px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Icon Gallery</h1>
+  <div class="subtitle">
+    <code>Nevsky-BI-user/icons-png-powerbi</code> · 16 icons · 12/20 categories used ·
+    CDN <code>@main</code> ·
+    <a href="https://github.com/Nevsky-BI-user/icons-png-powerbi" target="_blank">view on GitHub</a>
+  </div>
+  <div class="toolbar">
+    <input id="search" type="text" placeholder="Пошук по назві, категорії, опису, тегам…" autofocus>
+    <span class="stats" id="stats"></span>
+  </div>
+</header>
+
+<main id="grid"></main>
+
+<script>
+const DATA = [
+  {cat:"actions", name:"briefcase", file:"actions_briefcase.png",
+    desc:"Дипломат / валіза — робота, посада, організація",
+    use:"у візуалі: Profile meta (org), Detail header «Організація»",
+    color:"6b7b8e", source:"lucide:briefcase"},
+  {cat:"agro", name:"agriculture", file:"agro_agriculture.png",
+    desc:"Сільгосптехніка — агро, рослинництво",
+    use:"smoke-test, не використовується у візуалі",
+    color:"063e61", source:"material-symbols:agriculture", note:true},
+  {cat:"communication", name:"network", file:"communication_network.png",
+    desc:"Вузли з лініями — мережа, контакти, взаємодії",
+    use:"у візуалі: Tooltip «X контактів», Detail «Метрики взаємодії»",
+    color:"2c4f7c", source:"lucide:network"},
+  {cat:"data", name:"chart", file:"data_chart.png",
+    desc:"Графік-лінія — динаміка, аналітика, дашборд",
+    use:"у візуалі: Header кнопка, Tooltip footer, Detail header «Повна деталізація»",
+    color:"6b7b8e", source:"lucide:line-chart"},
+  {cat:"documents", name:"folder", file:"documents_folder.png",
+    desc:"Папка — підрозділ, напрям, ієрархія",
+    use:"у візуалі: Profile meta (напрям / піднапрям)",
+    color:"6b7b8e", source:"lucide:folder"},
+  {cat:"finance", name:"coin", file:"finance_coin.png",
+    desc:"Монети — гроші, винагорода, оклад, РЦД",
+    use:"у візуалі: KPI #1 «Поточний РЦД», Tooltip «РЦД», Detail «Винагорода»",
+    color:"2c4f7c", source:"lucide:coins"},
+  {cat:"hr", name:"award", file:"hr_award.png",
+    desc:"Медаль — нагорода, premium, perf",
+    use:"визначено в ICN dictionary, але НЕ рендериться у візуалі",
+    color:"063e61", source:"material-symbols:workspace-premium-outline", note:true},
+  {cat:"kpi", name:"target", file:"kpi_target.png",
+    desc:"Мішень — ціль, OKR, bullseye, objective",
+    use:"у візуалі: KPI #4 «OKR · інд. бонус», Detail «OKR · інд. бонус»",
+    color:"854f0b", source:"lucide:target"},
+  {cat:"kpi", name:"trend_up", file:"kpi_trend_up.png",
+    desc:"Стрілка вгору — зростання, тренд, кар'єра",
+    use:"у візуалі: KPI #2 «Кар'єрний шлях», заголовок графіка «Динаміка РЦД»",
+    color:"3c3489", source:"lucide:trending-up"},
+  {cat:"navigation", name:"filter", file:"navigation_filter.png",
+    desc:"Воронка — фільтр, виборка, sort",
+    use:"у візуалі: Filter chip row «Фільтри:»",
+    color:"6b7b8e", source:"lucide:filter"},
+  {cat:"navigation", name:"search", file:"navigation_search.png",
+    desc:"Лупа — пошук, find, lookup",
+    use:"у візуалі: Header кнопка (top-right)",
+    color:"6b7b8e", source:"lucide:search"},
+  {cat:"status", name:"bolt", file:"status_bolt.png",
+    desc:"Блискавка — швидкість, енергія, zap",
+    use:"у візуалі: Tooltip mini-tile «Оклад»",
+    color:"6b7b8e", source:"lucide:zap"},
+  {cat:"status", name:"star", file:"status_star.png",
+    desc:"Зірка — рейтинг, обране, star employee",
+    use:"у візуалі: KPI #3 «Performance», Tooltip star marker, Detail «Performance»",
+    color:"27500a", source:"lucide:star"},
+  {cat:"time", name:"calendar", file:"time_calendar.png",
+    desc:"Календар — дата події, місяць, schedule",
+    use:"у візуалі: Header кнопка, Profile meta («у холдингу з …»)",
+    color:"6b7b8e", source:"lucide:calendar"},
+  {cat:"time", name:"clock", file:"time_clock.png",
+    desc:"Годинник — час, стаж, тривалість",
+    use:"у візуалі: Profile meta («стаж»), Tooltip «стаж на посаді» + години",
+    color:"6b7b8e", source:"lucide:clock"},
+  {cat:"users", name:"person", file:"users_person.png",
+    desc:"Силует людини — співробітник, користувач, profile",
+    use:"у візуалі: Profile picker «Вибір співробітника», Detail «Посада і стаж»",
+    color:"6b7b8e", source:"lucide:user"}
+];
+
+const CDN_BASE = "https://cdn.jsdelivr.net/gh/Nevsky-BI-user/icons-png-powerbi@main/icons";
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const stats = document.getElementById("stats");
+
+function urlOf(d){ return `${CDN_BASE}/${d.cat}/${d.file}`; }
+
+function render(){
+  grid.innerHTML = "";
+  let lastCat = null;
+  const sorted = [...DATA].sort((a,b)=> a.cat.localeCompare(b.cat) || a.name.localeCompare(b.name));
+  let firstCat = true;
+  const gridWrap = document.createElement("div");
+  for (const d of sorted){
+    if (d.cat !== lastCat){
+      const h = document.createElement("div");
+      h.className = "cat-title";
+      h.textContent = d.cat;
+      h.dataset.cat = d.cat;
+      grid.appendChild(h);
+      const g = document.createElement("div");
+      g.className = "grid";
+      g.dataset.cat = d.cat;
+      grid.appendChild(g);
+      lastCat = d.cat;
+    }
+    const g = grid.querySelector(`.grid[data-cat="${d.cat}"]`);
+    const card = document.createElement("div");
+    card.className = "card";
+    card.dataset.search = `${d.cat} ${d.name} ${d.file} ${d.desc} ${d.use} ${d.source}`.toLowerCase();
+    const url = urlOf(d);
+    card.innerHTML = `
+      <div class="preview"><img src="${url}" alt="${d.name}" loading="lazy"></div>
+      <div class="meta">
+        <p class="name"><span class="cat-tag">${d.cat}</span>${d.name}</p>
+        <p class="desc${d.note?' note':''}">
+          <span class="color-dot" style="background:#${d.color}"></span>
+          <b>${d.desc}</b><br>
+          ${d.use}
+        </p>
+        <div class="copy-row">
+          <button class="copy" data-url="${url}" title="${url}">${url.replace(CDN_BASE+"/","")}</button>
+        </div>
+      </div>
+    `;
+    g.appendChild(card);
+  }
+  updateStats();
+}
+
+function updateStats(){
+  const total = DATA.length;
+  const visible = document.querySelectorAll(".card:not(.hidden)").length;
+  stats.textContent = visible === total ? `${total} icons` : `${visible} / ${total} icons`;
+}
+
+search.addEventListener("input", () => {
+  const q = search.value.trim().toLowerCase();
+  document.querySelectorAll(".card").forEach(c => {
+    c.classList.toggle("hidden", q && !c.dataset.search.includes(q));
+  });
+  document.querySelectorAll(".grid").forEach(g => {
+    const any = g.querySelectorAll(".card:not(.hidden)").length > 0;
+    g.style.display = any ? "" : "none";
+    const title = g.previousElementSibling;
+    if (title && title.classList.contains("cat-title")) title.style.display = any ? "" : "none";
+  });
+  updateStats();
+});
+
+grid.addEventListener("click", (e) => {
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  navigator.clipboard.writeText(btn.dataset.url).then(()=>{
+    const orig = btn.textContent;
+    btn.classList.add("ok");
+    btn.textContent = "✓ copied — paste у DAX";
+    setTimeout(()=>{ btn.classList.remove("ok"); btn.textContent = orig; }, 1400);
+  });
+});
+
+render();
+</script>
+</body>
+</html>
