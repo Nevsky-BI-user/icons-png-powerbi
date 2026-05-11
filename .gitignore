@@ -13,3 +13,6 @@ Thumbs.db
 
 # Claude Code local settings
 .claude/
+
+# Auto-generated diff helper (opened after batch commits, regenerated each time)
+_changes.html
