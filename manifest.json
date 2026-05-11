@@ -19,17 +19,39 @@
     }
   },
   "categories": [
-    "navigation", "actions", "kpi", "status", "time", "data", "users",
-    "communication", "security", "documents", "geography", "analytics",
-    "finance", "ecommerce", "hr", "agro", "logistics", "production",
-    "marketing", "sales"
+    "navigation",
+    "actions",
+    "kpi",
+    "status",
+    "time",
+    "data",
+    "users",
+    "communication",
+    "security",
+    "documents",
+    "geography",
+    "analytics",
+    "finance",
+    "ecommerce",
+    "hr",
+    "agro",
+    "logistics",
+    "production",
+    "marketing",
+    "sales"
   ],
   "defaults": {
     "color": "063e61",
     "size_px": 64,
     "background": "transparent",
     "style_family": "material-symbols-outlined",
-    "license_preference": ["MIT", "Apache-2.0", "CC0-1.0", "ISC", "CC-BY-4.0"]
+    "license_preference": [
+      "MIT",
+      "Apache-2.0",
+      "CC0-1.0",
+      "ISC",
+      "CC-BY-4.0"
+    ]
   },
   "sources_enabled": {
     "iconify": true,
@@ -39,6 +61,30 @@
     "noun_project": false
   },
   "updated": "2026-05-11",
-  "count": 0,
-  "icons": []
+  "count": 1,
+  "icons": [
+    {
+      "path": "icons/agro/agro_agriculture.png",
+      "url_raw": "https://raw.githubusercontent.com/Nevsky-BI-user/icons-png-powerbi/main/icons/agro/agro_agriculture.png",
+      "url_cdn": "https://cdn.jsdelivr.net/gh/Nevsky-BI-user/icons-png-powerbi@main/icons/agro/agro_agriculture.png",
+      "category": "agro",
+      "name": "agriculture",
+      "tags": [
+        "agriculture",
+        "farming",
+        "agro",
+        "сільське господарство",
+        "сельское хозяйство",
+        "tractor field"
+      ],
+      "source": "iconify:material-symbols",
+      "source_icon_id": "material-symbols:agriculture",
+      "style": "filled",
+      "size_px": 64,
+      "color": "063e61",
+      "license": "Apache-2.0",
+      "attribution": null,
+      "added": "2026-05-11"
+    }
+  ]
 }
