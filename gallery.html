@@ -300,6 +300,28 @@ grid.addEventListener("click", (e) => {
 });
 
 render();
+
+// ── Auto-refresh: poll own file every 3s, reload if DATA changed ──────────
+let __initialFingerprint = null;
+function __fingerprint(text){
+  const m = text.match(/const DATA = (\[[\s\S]*?\]);/);
+  return m ? m[1].length + ":" + m[1].slice(-200) : null;
+}
+async function __selfHash(){
+  const r = await fetch(location.pathname, {cache: "no-store"});
+  return __fingerprint(await r.text());
+}
+(async () => {
+  try { __initialFingerprint = await __selfHash(); } catch(e){}
+  setInterval(async () => {
+    try {
+      const h = await __selfHash();
+      if (h && __initialFingerprint && h !== __initialFingerprint){
+        location.reload();
+      }
+    } catch(e){}
+  }, 3000);
+})();
 </script>
 </body>
 </html>
