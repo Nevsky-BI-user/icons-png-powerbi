@@ -101,11 +101,11 @@
         "организация",
         "company"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:work-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:briefcase",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -125,11 +125,11 @@
         "подразделение",
         "department"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:folder-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:folder",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -149,11 +149,11 @@
         "hire_date",
         "schedule"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:calendar-month-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:calendar",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -174,11 +174,11 @@
         "wage",
         "compensation"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:paid-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:coins",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "2c4f7c",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -198,11 +198,11 @@
         "increase",
         "arrow_up"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:trending-up",
-      "style": "filled",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:trending-up",
+      "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "3c3489",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -222,11 +222,11 @@
         "star_employee",
         "зірковий"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:star-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:star",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "27500a",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -247,11 +247,11 @@
         "okr",
         "bullseye"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:target",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:target",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "854f0b",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -272,11 +272,11 @@
         "стаж",
         "duration"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:schedule-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:clock",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -296,11 +296,11 @@
         "people",
         "profile"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:person-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:user",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -321,11 +321,11 @@
         "zap",
         "quick"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:bolt-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:zap",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -346,11 +346,11 @@
         "trend_line",
         "dashboard"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:show-chart",
-      "style": "filled",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:line-chart",
+      "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -395,11 +395,11 @@
         "net",
         "department_links"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:hub-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:network",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "2c4f7c",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -418,11 +418,11 @@
         "sort",
         "refine"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:filter-alt-outline",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:filter",
       "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
@@ -441,11 +441,11 @@
         "поиск",
         "lookup"
       ],
-      "source": "iconify:material-symbols",
-      "source_icon_id": "material-symbols:search",
-      "style": "filled",
+      "source": "iconify:lucide",
+      "source_icon_id": "lucide:search",
+      "style": "outlined",
       "size_px": 64,
-      "color": "063e61",
+      "color": "6b7b8e",
       "license": "Apache-2.0",
       "attribution": null,
       "added": "2026-05-11"
