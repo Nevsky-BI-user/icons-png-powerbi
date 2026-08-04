@@ -7,3 +7,4 @@ Icons from permissive sources (Iconify with MIT/Apache/CC0 sets, SVG Repo CC0/Pu
 ## Entries
 
 (Auto-populated by icon-set-manager skill on icon fetch from attribution-required sources)
+- Логотип © НАК «Нафтогаз України», naftogaz.com (brand_naftogaz_*.png)
