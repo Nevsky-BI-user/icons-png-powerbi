@@ -1,6 +1,6 @@
 # Last changes
 
-**Commit `PENDING`** — Naftogaz: прозорі дублі без плашки (6) + rename circle→compact
+**Commit [`fa22726`](https://github.com/Nevsky-BI-user/icons-png-powerbi/commit/fa22726)** — Naftogaz: прозорі дублі без плашки (6) + rename circle→compact
 
 | Статус | Категорія | Файл | Прев'ю | Опис | Локально | CDN URL |
 |---|---|---|---|---|---|---|
