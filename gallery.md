@@ -1,6 +1,6 @@
 # Last changes
 
-**Commit `PENDING`** — Add brand icons: Naftogaz logos UA/EN (7)
+**Commit [`072829b`](https://github.com/Nevsky-BI-user/icons-png-powerbi/commit/072829b)** — Add brand icons: Naftogaz logos UA/EN (7)
 
 | Статус | Категорія | Файл | Прев'ю | Опис | Локально | CDN URL |
 |---|---|---|---|---|---|---|
